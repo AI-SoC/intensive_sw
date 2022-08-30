@@ -1,5 +1,3 @@
 int increment(int i){
-    return i+2;
+    return i + 1;
 }
-
-
