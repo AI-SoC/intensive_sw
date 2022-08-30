@@ -9,3 +9,6 @@ int main() {
     return 0;
 }
 
+int increment(int i) {
+    return i+1;
+}
