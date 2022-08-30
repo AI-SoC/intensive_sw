@@ -727,16 +727,16 @@ extern int __overflow (FILE *, int);
 
 
 
-# 5 "hello.c"
-int g1 = 10;
-static int s1 = 14;
-const int c1 = 100;
-int k1 = 100;
-extern int increment(int i);
-int main() {
-    int i = g1 + c1;
 
-    printf("Hello, world! %d\n", increment(i));
+# 6 "hello.c"
+int g1=20;
+static int s1=14;
+const int c1 = 100;
+int K1 = 200;
+extern int increment(int i);
+
+int main() {
+    int i=g1 + c1;
     printf("Hello, world! %d\n", increment(i));
     return 0;
 }
