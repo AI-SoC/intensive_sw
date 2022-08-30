@@ -1,5 +1,6 @@
 // hello.c
 #include <stdio.h>
+#define KK 200
 
 // variable
 int g1 = 20;
@@ -10,6 +11,7 @@ const를 함으로써 성능 개선
 value 자체를 encoding 하여 메모리 로드하는 것을 없앰
 */ 
 const int c1 = 100; 
+int k1 = KK;
 
 // function
 extern int increment(int i);
