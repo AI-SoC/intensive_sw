@@ -7,5 +7,4 @@ int increment(int i) {
     status++;
     printf("g1 is %d, %d, %d\n", g1, s1, status);
     return i+1;
-increment(i);
 }
