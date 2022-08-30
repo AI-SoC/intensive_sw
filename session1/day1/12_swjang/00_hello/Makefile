@@ -17,12 +17,8 @@ asm: hello.s
 hello.o: hello.c
 	gcc -c hello.c
 
-foo.o: foo.c
-	gcc -c foo.c
-
-all: hello.o foo.o
-	gcc -o hello hello.o foo.o
-	./hello
+all: hello.o
+	gcc -o hello hello.o
 
 clean: 
 	rm -rf *.o
