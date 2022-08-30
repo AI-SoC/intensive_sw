@@ -24,6 +24,8 @@ all: hello.o foo.o
 	gcc -o hello hello.o foo.o
 	./hello
 
+	
+
 clean: 
 	rm -rf *.o
 

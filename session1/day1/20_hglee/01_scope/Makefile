@@ -16,7 +16,7 @@ asm: hello.s
 
 hello.o: hello.c
 	gcc -c hello.c
-
+	
 foo.o: foo.c
 	gcc -c foo.c
 
