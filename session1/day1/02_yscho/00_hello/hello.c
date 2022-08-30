@@ -1,7 +1,8 @@
 // hello.c
 #include <stdio.h>
-
+ 
 extern int increment(int i);
+
 
 int main() {
     int i=10;
