@@ -17,7 +17,8 @@ int main() {
     
     volatile int ADC_DATA = 3;  // volatile : 스스로 값이 바뀐다, 휘발성
     // 변수가 매핑된 곳에 hw가 존재한다면 volatile붙여야 됨
-    
+    // 최적화 막아주는 기능
+
     while (ADC_EOC_CHECK == 0);
 
     int compensated_ADC = ADC_DATA + 7;
