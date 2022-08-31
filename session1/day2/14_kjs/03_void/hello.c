@@ -8,7 +8,10 @@ int compare_float(float a, float b){
 }
 
 int compare(int type, void* ap, void* bp){
-        
+        if(type == 0){
+            int* a = (int*)ap;
+            int* b = (int*)bp;
+        }
 }
 
 int main(){
@@ -24,5 +27,10 @@ int main(){
         printf("c is equal to d\n");
     else
         printf("c is not equal to d\n");
+
+    if(compare(1,a,b) ==1)
+        printf("compare(): equal\n");
+    else
+        printf("compare(): not equal\n");
     return 0;
 }

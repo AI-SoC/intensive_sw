@@ -1,25 +1,48 @@
 // hello.c
 #include <stdio.h>
-enum ADC_STATUS { EOC=1, SOC=0 };
-enum TIMER_MODE {
-    TIMER_EN    = (1<<7),
-    TIMER_START = (1<<2),
-};
-int adc_status() {
-    // activating ADC, reading ADC status
-    // if( read_adc())
-    //   return EOC;
-    return SOC;
+int compare_int(int a, int b)
+{
+    return (a == b);
 }
-int main() {
-    if(adc_status() == SOC) {
-        printf("still on conversion...\n");
+int compare_float(float a, float b)
+{
+    return (a == b);
+}
+int compare(int type, void *ap, void *bp) {
+    if (type == 0) {
+        int* a = (int*)ap;
+        int* b = (int*)bp;
+        return *a == *b;
     }
+    else {
+        float* a = (float*)ap;
+        float* b = (float*)bp;
+        return *a == *b;
+    }
+}
+int main()
+{
+    int a = 100;
+    int b = 200;
+    if (compare_int(a, b) == 1)
+        printf("a is equal to b\n");
+    else
+        printf("a is not equal to b\n");
+    float c = 100.2;
+    float d = 200.8;
+    if (compare_float(c, d) == 1)
+        printf("equal\n");
+    else
+        printf("not equal\n");
 
-    // #define TMODE *((unsigned char*)0xFFFF0000)
-    unsigned char TMODE;
-    TMODE = TIMER_EN;
-    TMODE |= TIMER_START;
-    printf("TMODE: 0x%2X\n", TMODE); 
+    if (compare(1, &a, &b) == 1)
+        printf("compare(): equal\n");
+    else
+        printf("compare(): not equal\n");
+
+    if (compare(0, &c, &d) == 1)
+        printf("compare(): equal\n");
+    else
+        printf("compare(): not equal\n");
     return 0;
 }
