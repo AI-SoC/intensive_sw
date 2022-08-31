@@ -15,11 +15,11 @@ asm: hello.s
 	as -o hello.o hello.s
 
 hello.o: hello.c
-	gcc -c hello.c
+	gcc -c hello.c 
 
 all: hello.o
 	gcc -o hello hello.o
-	./hello;p
+	./hello
 
 clean: 
 	rm -rf *.o
