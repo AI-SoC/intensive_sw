@@ -18,7 +18,7 @@ int main() {
 
     // #define TMODE *((unsigned char*)0xFFFF0000)
     unsigned char TMODE = TIMER_EN;
-    TMODE |= TIMER_START; // 비트 or연산
+    TMODE |= TIMER_START; // bit or
     printf("TMODE : 0x%2X\n", TMODE);
     return 0;
 }
