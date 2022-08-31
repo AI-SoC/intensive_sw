@@ -35,6 +35,12 @@ int main() {
     0x7fffe8be4e37 | 34
     0x7fffe8be4e38 | 12
     */
+
+    int arr[5] = {1,2,3,4,5};
+    for(int i = 0;i<5;i++){
+        printf("arr[%d] is %d at %p\n",i, arr[i], &arr[i]);
+    }
+ 
     return 0;
 }
 
