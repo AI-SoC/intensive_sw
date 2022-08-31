@@ -206,11 +206,11 @@ Disassembly of section .text:
     129b:	80 4d e3 80          	orb    $0x80,-0x1d(%rbp)
     129f:	0f b6 45 e3          	movzbl -0x1d(%rbp),%eax
     12a3:	89 c6                	mov    %eax,%esi
-    12a5:	48 8d 3d cf 0d 00 00 	lea    0xdcf(%rip),%rdi        # 207b <_IO_stdin_used+0x7b>
+    12a5:	48 8d 3d ce 0d 00 00 	lea    0xdce(%rip),%rdi        # 207a <_IO_stdin_used+0x7a>
     12ac:	b8 00 00 00 00       	mov    $0x0,%eax
     12b1:	e8 ba fd ff ff       	callq  1070 <printf@plt>
     12b6:	be 02 00 00 00       	mov    $0x2,%esi
-    12bb:	48 8d 3d c6 0d 00 00 	lea    0xdc6(%rip),%rdi        # 2088 <_IO_stdin_used+0x88>
+    12bb:	48 8d 3d c5 0d 00 00 	lea    0xdc5(%rip),%rdi        # 2087 <_IO_stdin_used+0x87>
     12c2:	b8 00 00 00 00       	mov    $0x0,%eax
     12c7:	e8 a4 fd ff ff       	callq  1070 <printf@plt>
     12cc:	66 c7 45 f6 05 f0    	movw   $0xf005,-0xa(%rbp)

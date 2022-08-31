@@ -190,12 +190,12 @@ Disassembly of section .text:
     1254:	48 89 c7             	mov    %rax,%rdi
     1257:	e8 0d ff ff ff       	callq  1169 <mem_inspection>
     125c:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
-    1260:	48 83 c0 01          	add    $0x1,%rax
+    1260:	48 83 c0 02          	add    $0x2,%rax
     1264:	c6 00 5a             	movb   $0x5a,(%rax)
-    1267:	0f b6 45 e5          	movzbl -0x1b(%rbp),%eax
-    126b:	0f b6 c0             	movzbl %al,%eax
+    1267:	0f b7 45 e6          	movzwl -0x1a(%rbp),%eax
+    126b:	0f b7 c0             	movzwl %ax,%eax
     126e:	89 c6                	mov    %eax,%esi
-    1270:	48 8d 3d b9 0d 00 00 	lea    0xdb9(%rip),%rdi        # 2030 <_IO_stdin_used+0x30>
+    1270:	48 8d 3d c8 0d 00 00 	lea    0xdc8(%rip),%rdi        # 203f <_IO_stdin_used+0x3f>
     1277:	b8 00 00 00 00       	mov    $0x0,%eax
     127c:	e8 ef fd ff ff       	callq  1070 <printf@plt>
     1281:	be 01 00 00 00       	mov    $0x1,%esi
@@ -206,7 +206,7 @@ Disassembly of section .text:
     129b:	80 4d e3 80          	orb    $0x80,-0x1d(%rbp)
     129f:	0f b6 45 e3          	movzbl -0x1d(%rbp),%eax
     12a3:	89 c6                	mov    %eax,%esi
-    12a5:	48 8d 3d cf 0d 00 00 	lea    0xdcf(%rip),%rdi        # 207b <_IO_stdin_used+0x7b>
+    12a5:	48 8d 3d c7 0d 00 00 	lea    0xdc7(%rip),%rdi        # 2073 <_IO_stdin_used+0x73>
     12ac:	b8 00 00 00 00       	mov    $0x0,%eax
     12b1:	e8 ba fd ff ff       	callq  1070 <printf@plt>
     12b6:	be 02 00 00 00       	mov    $0x2,%esi
@@ -219,7 +219,7 @@ Disassembly of section .text:
     12d9:	0f b6 45 f7          	movzbl -0x9(%rbp),%eax
     12dd:	0f b6 c0             	movzbl %al,%eax
     12e0:	89 c6                	mov    %eax,%esi
-    12e2:	48 8d 3d b9 0d 00 00 	lea    0xdb9(%rip),%rdi        # 20a2 <_IO_stdin_used+0xa2>
+    12e2:	48 8d 3d c7 0d 00 00 	lea    0xdc7(%rip),%rdi        # 20b0 <_IO_stdin_used+0xb0>
     12e9:	b8 00 00 00 00       	mov    $0x0,%eax
     12ee:	e8 7d fd ff ff       	callq  1070 <printf@plt>
     12f3:	0f b6 45 f7          	movzbl -0x9(%rbp),%eax
@@ -230,7 +230,7 @@ Disassembly of section .text:
     1304:	0f b6 45 f7          	movzbl -0x9(%rbp),%eax
     1308:	0f b6 c0             	movzbl %al,%eax
     130b:	89 c6                	mov    %eax,%esi
-    130d:	48 8d 3d 8e 0d 00 00 	lea    0xd8e(%rip),%rdi        # 20a2 <_IO_stdin_used+0xa2>
+    130d:	48 8d 3d 9c 0d 00 00 	lea    0xd9c(%rip),%rdi        # 20b0 <_IO_stdin_used+0xb0>
     1314:	b8 00 00 00 00       	mov    $0x0,%eax
     1319:	e8 52 fd ff ff       	callq  1070 <printf@plt>
     131e:	0f b6 45 f6          	movzbl -0xa(%rbp),%eax
@@ -241,7 +241,7 @@ Disassembly of section .text:
     132f:	0f b6 45 f7          	movzbl -0x9(%rbp),%eax
     1333:	0f b6 c0             	movzbl %al,%eax
     1336:	89 c6                	mov    %eax,%esi
-    1338:	48 8d 3d 63 0d 00 00 	lea    0xd63(%rip),%rdi        # 20a2 <_IO_stdin_used+0xa2>
+    1338:	48 8d 3d 71 0d 00 00 	lea    0xd71(%rip),%rdi        # 20b0 <_IO_stdin_used+0xb0>
     133f:	b8 00 00 00 00       	mov    $0x0,%eax
     1344:	e8 27 fd ff ff       	callq  1070 <printf@plt>
     1349:	90                   	nop
