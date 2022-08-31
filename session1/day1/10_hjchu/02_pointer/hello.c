@@ -12,6 +12,7 @@ int main() {
     int b = 20;
     int * ap = &a;
     int** app = &ap;
+    
     update(&a, &b);
     printf("a, b is %d, %d\n", a, b);
     printf("a is alllocated with %lu bytes @ %p\n", sizeof(a), &a);
@@ -24,6 +25,14 @@ int main() {
     printf("%p | %2x\n", mbp, *mbp++);
     printf("%p | %2x\n", mbp, *mbp++);
     printf("%p | %2x\n", mbp, *mbp++);
+
+    
+    int arr[5] = {1, 2, 3, 4, 5};
+    for(int i = 0; i < 5; i++)
+    {
+        printf("arr[%d] is %d at %p\n", i, arr[i], &arr[i]);
+    }
+
 
     return 0;
 }
