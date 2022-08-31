@@ -12,7 +12,7 @@ int ADC_EOC_CHECK() {
 }
 int main() {
     // ADC_DATA = .... will be executed by Hardware
-    int ADC_DATA=3;
+    volatile int ADC_DATA=3;
     // blocking until status is matched
     while(ADC_EOC_CHECK() == 0); 
 
