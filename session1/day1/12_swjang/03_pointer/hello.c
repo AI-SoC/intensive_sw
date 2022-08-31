@@ -35,5 +35,11 @@ int main() {
     printf("%p | %2X\n", mbp, *mbp++);
     printf("%p | %2X\n", mbp, *mbp++);
 
+    int arr[5];
+    for(int i = 0; i < 5; i++) {
+        arr[i] = i + 1;
+        printf("arr[%d] is %d at %p\n", i, arr[i], &arr[i]);
+    }
+
     return 0;
 }
