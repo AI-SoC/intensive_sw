@@ -18,7 +18,7 @@ hello.o: hello.c
 	gcc -c hello.c
 
 all: 	
-	gcc -O3 -o hello hello.c
+	gcc -o hello hello.c
 	objdump -d -S hello > hello_dis.s
 	./hello
 
