@@ -18,10 +18,10 @@ hello.o: hello.c
 	gcc -c hello.c
 
 all: 
-	gcc -O3 -o hello hello.c
+	gcc -O3 -o hello hello.o
 	objdump -d -S hello > hello_dis.s
 	./hello
-
+	
 clean: 
 	rm -rf *.o
 

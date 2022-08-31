@@ -17,9 +17,9 @@ asm: hello.s
 hello.o: hello.c
 	gcc -c hello.c
 
-all: 
-	gcc -O3 -o hello hello.c
-	objdump -d -S hello > hello_dis.s
+all:
+	gcc -o hello hello.c
+	objdump -d -S hello > hello_dis.S
 	./hello
 
 clean: 
