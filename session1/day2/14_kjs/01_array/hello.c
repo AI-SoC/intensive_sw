@@ -27,5 +27,20 @@ int main() {
     *(abp+2) = 0x5A;
     for(int i=0; i<4; i++)
         printf("mem[%d] is %2X at %p\n", i, *(abp+i), abp+i);
+
+        unsigned int mat[3][4] = {
+            {1,2,3,4},
+            {5,6,7,8},
+            {3,5,1,9}
+        };
+        unsigned int* mp = (unsigned int*)mat;
+
+        for(int i=0; i<3; i++) {
+            for (int j=0; j<4; j++){
+                //printf("%2X ", mat[i][j]);
+                printf("%2X ", *(mp+i*4+j));
+            }
+            printf("\n");
+        }
     return 0;
 }
