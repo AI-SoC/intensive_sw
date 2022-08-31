@@ -37,7 +37,6 @@ int main() {
     };
     unsigned int* mp = (unsigned int*)mat;
 
-
     for(int i=0; i<3; i++) {
         for(int j=0; j<4; j++) {
             //printf("%2X ", mat[i][j]);
