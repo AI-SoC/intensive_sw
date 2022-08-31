@@ -43,7 +43,7 @@ void main() {
 
     unsigned char b8 = 0xB;
     // bytes = 0x80; // try to set MSB --> overwrite all --> error
-    b8 = 0x80;
+    b8 |= 0x80;
     printf("bytes: %02X\n", b8);
 
     union flag_16bits flag16;
@@ -54,4 +54,8 @@ void main() {
 
     flag16.b[1].b7 = 0;
     printf("flag16 is 0x%02X%02X\n", flag16.bytes[1], flag16.bytes[0]);
+
+    flag16.b[0].b3 = 1;
+    printf("flag16 is 0x%02X%02X\n", flag16.bytes[1], flag16.bytes[0]);
 }
+
