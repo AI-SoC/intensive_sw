@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 struct REG_BITS {
@@ -13,12 +12,17 @@ union ADC_CONTROL {
     struct REG_BITS B;
 };
 
-union ADC_CONTROL adc_control1;
-#define ADCC (*(volatile union ADC_CONTROL*)&adc_control1)
+#define HW_EMULATION 1
+#ifdef HW_EMULATION
+    union ADC_CONTROL adc_control1;
+    #define ADCC (*(volatile union ADC_CONTROL*)&adc_control1)
+#else
+    #define ADCC (*(volatile union ADC_CONTROL*)&0xFFB00000);
+#endif
 
-int main() {
+int main(){
     ADCC.U = 0x12345678;
     ADCC.B.F2 = 0xFF;
-    printf("ADCC: 0x%08X\n", ADCC.U);
+    printf("ADCC : 0x%08x\n", ADCC.U);
     return 0;
 }
