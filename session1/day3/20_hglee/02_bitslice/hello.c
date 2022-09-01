@@ -29,7 +29,6 @@ int main(){
     P0 = P0 & ~(0x80);          // 10000101 - 4번째 지우기
     // printf("P0 2 : 0x%02X\n", P0);
 
-
     union PORT0 port0;
     port0.U = 0xFF;
     port0.B.b4 = 0;
