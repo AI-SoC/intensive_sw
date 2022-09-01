@@ -3,4 +3,4 @@ all:
 	./hello
 
 clean:
-	rm -rf hello *.0
+	rm -rf hello *.o
