@@ -20,15 +20,19 @@ int main() {
 
     unsigned int mem=0x12345678; ///32bit data
     unsigned int* mp=&mem; //4byte임. 전체 주소. 
-    unsigned char* mbp=(unsigned char*)mp; //1byte만 가리킴. 그래서 주소 중에 맨 첫번째 부분의 한바이트만 나옴. 
+    unsigned char* mbp=mp; //1byte만 가리킴. 그래서 주소 중에 맨 첫번째 부분의 한바이트만 나옴. 
+    *(mbp+2)=0x5A;
     printf("%p | %2X\n", (mbp+0), *(mbp+0));
     printf("%p | %2X\n", (mbp+1), *(mbp+1));
     printf("%p | %2X\n", (mbp+2), *(mbp+2));
     printf("%p | %2X\n", (mbp+3), *(mbp+3));
+    
 
+    /*
     int arr[5] = {1, 2, 3, 4, 5};
     for(int i=0; i<5; i++)
         printf("arr[%d} is %d at %p\n", i, arr[i], arr[i]);
+    */
     return 0;
 }
 
