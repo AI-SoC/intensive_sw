@@ -20,6 +20,7 @@ hello.o: hello.c
 all: hello.o
 	gcc -o hello hello.o
 	./hello
+
 clean: 
 	rm -rf *.o
 
