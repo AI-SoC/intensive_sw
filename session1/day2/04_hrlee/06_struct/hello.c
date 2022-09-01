@@ -60,4 +60,3 @@ void main() {
     printf("flag16 is 0x%02X%02X \n", flag16.bytes[1], flag16.bytes[0]);
 
 }
-
