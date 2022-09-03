@@ -1,11 +1,11 @@
 // hello.c
 #include <stdio.h>
-enum ADC_STATUS { EOC=1, SOC=0 };
+typedef enum { EOC=1, SOC=0 } ADC_STATUS ;
 enum TIMER_MODE {
     TIMER_EN    = (1<<7),
     TIMER_START = (1<<2)
 };
-int adc_status() {
+ADC_STATUS adc_status() {
     // activating ADC, reading ADC status
     // if( read_adc()) 
     //   return EOC;
