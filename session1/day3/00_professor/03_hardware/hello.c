@@ -12,12 +12,20 @@ union ADC_CONTROL {
 
 #define HW_EMULATION 1
 #ifdef HW_EMULATION
+  // allocation on memory to get region, 
+  // then we can point out there with &adc_control1
   union ADC_CONTROL adc_control1;
   #define ADCC (*(volatile union ADC_CONTROL*)&adc_control1)
 #else
+  //                                     from Chip Spec Manual
+  //                                             |
+  //                                             V
   #define ADCC (*(volatile union ADC_CONTROL*)0xFFB00000)
 //#define P    (*(                       int*)0xFFCC0000)
 #endif
+
+#define F2_IDX 16
+#define EOC_IDX 3
 
 int main() {
     ADCC.U = 0x12345678;
@@ -29,5 +37,17 @@ int main() {
     ADCC.U |= 0x005A0000; // bit set
     
     printf("ADCC: 0x%08X\n", ADCC.U);
+
+    ADCC.U  = 0x12345678;
+    ADCC.U &= ~(0xFF << F2_IDX); // clear bit slide using mask pattern generation
+    ADCC.U |= 0x5A << F2_IDX;    // then we can set bit slice
+    printf("ADCC: 0x%08X\n", ADCC.U);
+    
+    // wait here until ADCC[3] is 1
+    while( (ADCC.U & (1<<EOC_IDX)) == 0);
+
+    // check hardare via bus with memory-mapped hardware
+    // ADCC[3] is 1, go through here
+    printf("End of conversion\n");
     return 0;
 }
