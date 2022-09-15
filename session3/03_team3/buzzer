@@ -1,0 +1,170 @@
+
+// 비행기 // from 3 octave ��C ~ 4 octave ��C {��C, ��D, ��E, ��F, ��G, ��A, ��B, ��C}
+unsigned int duty[8] = {130, 146, 164, 174, 195, 220, 246, 262};
+
+while(1)
+{
+
+//for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[6]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[6]) - 1;
+
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[5]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[5]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[4]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[4]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[5]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[5]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[6]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[6]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = 0;
+GTM_TOM0_CH11_SR1.U = 0;
+
+for(unsigned int i = 0; i < 2000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[6]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[6]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = 0;
+GTM_TOM0_CH11_SR1.U = 0;
+
+for(unsigned int i = 0; i < 2000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[6]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[6]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = 0;
+GTM_TOM0_CH11_SR1.U = 0;
+
+
+for(unsigned int i = 0; i < 20000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[5]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[5]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = 0;
+GTM_TOM0_CH11_SR1.U = 0;
+
+for(unsigned int i = 0; i < 2000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[5]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[5]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = 0;
+GTM_TOM0_CH11_SR1.U = 0;
+
+for(unsigned int i = 0; i < 2000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[5]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[5]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = 0;
+GTM_TOM0_CH11_SR1.U = 0;
+
+
+for(unsigned int i = 0; i < 20000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[6]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[6]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = 0;
+GTM_TOM0_CH11_SR1.U = 0;
+
+for(unsigned int i = 0; i < 2000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[6]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[6]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = 0;
+GTM_TOM0_CH11_SR1.U = 0;
+
+for(unsigned int i = 0; i < 2000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[6]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[6]) - 1;
+
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = 0;
+GTM_TOM0_CH11_SR1.U = 0;
+
+for(unsigned int i = 0; i < 2000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[6]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[6]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[5]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[5]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[4]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[4]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[5]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[5]) - 1;
+
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[6]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[6]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = 0;
+GTM_TOM0_CH11_SR1.U = 0;
+
+for(unsigned int i = 0; i < 2000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[6]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[6]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = 0;
+GTM_TOM0_CH11_SR1.U = 0;
+
+for(unsigned int i = 0; i < 2000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[6]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[6]) - 1;
+
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = 0;
+GTM_TOM0_CH11_SR1.U = 0;
+
+
+for(unsigned int i = 0; i < 2000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[5]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[5]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = 0;
+GTM_TOM0_CH11_SR1.U = 0;
+
+for(unsigned int i = 0; i < 2000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[5]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[5]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[6]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[6]) - 1;
+
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[5]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[5]) - 1;
+
+for(unsigned int i = 0; i < 25000000; i++);
+GTM_TOM0_CH11_SR0.U = (6250000 / duty[4]) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / duty[4]) - 1;
+
+
+
+}
