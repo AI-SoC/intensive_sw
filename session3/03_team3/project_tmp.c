@@ -244,17 +244,17 @@ void ERU1_ISR(void)
                     if(cnt %2 == 0){
                         P10_OUT.U &= ~(0x1 << P1_BIT_LSB_IDX);
                         P02_OUT.U &= ~(0x1 << P7_BIT_LSB_IDX);
-                        for(int i = 0;i<100000000;i++);
+                        for(int i = 0;i<1000000000;i++);
                         P02_OUT.U |= (0x1 << P7_BIT_LSB_IDX);
                     }
-                else{
+                    else{
                         P10_OUT.U |= 0x1 << P1_BIT_LSB_IDX;     //방향     // 버튼 눌러서 색 바뀌는거랑 (모터 동시에?)
                         P02_OUT.U &= ~(0x1 << P7_BIT_LSB_IDX);
-                        for(int i = 0;i<100000000;i++);
+                        for(int i = 0;i<1000000000;i++);
                         P02_OUT.U |= (0x1 << P7_BIT_LSB_IDX);
-                }
+                    }
                 cnt++;
-                }
+            }
             }
 
 }
@@ -777,8 +777,8 @@ void initGTM(void)
     GTM_TOM0_CH9_CTRL.B.SL |= 0x1;
     GTM_TOM0_CH9_CTRL.B.CLK_SRC_SR |= 0x1;
 
-    GTM_TOM0_CH9_SR0.U = 12500 - 1;
-    //GTM_TOM0_CH9_SR1.U = 1250 - 1;
+    GTM_TOM0_CH9_SR0.U = 10 - 1;
+    GTM_TOM0_CH9_SR1.U = 10 - 1;
 
 
     // set GTM TOM0 channel 11 - Buzzer
