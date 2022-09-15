@@ -151,9 +151,11 @@ void CCU60_T12_ISR_mode2(void)
 if (mode_flag == 2)
 {
 mode2_cnt += 1;
-P02_OUT.U |= 0x1 << P3_BIT_LSB_IDX;
-for(unsigned int i = 0;i < 100000; i ++);
-P02_OUT.U &= ~(0x1 << P3_BIT_LSB_IDX);
+GTM_TOM0_CH11_SR0.U = (6250000 / 220) - 1;
+GTM_TOM0_CH11_SR1.U = (3125000 / 220) - 1;
+for(unsigned int i = 0; i < 2500000; i++);
+GTM_TOM0_CH11_SR0.U = 0;
+GTM_TOM0_CH11_SR1.U = 0;
 }
 }
 
@@ -285,7 +287,9 @@ initGTM();
 initVADC();
 initCCU60_mode2();
 P02_OUT.U |= (0x1 << P7_BIT_LSB_IDX);   // brake
-
+GTM_TOM0_TGC1_GLB_CTRL.U |= 0x1 << HOST_TRIG_BIT_LSB_IDX;       // trigger update request signal
+GTM_TOM0_CH11_SR0.U = 0;
+GTM_TOM0_CH11_SR1.U = 0;
 
 
 while(1)
@@ -322,12 +326,14 @@ while(1)
                 if (mode2_cnt == 10)
                 {
                     /* if mode2_cnt has reached to threshhold */
-                    P02_OUT.U |= 0x1 << P3_BIT_LSB_IDX;
-                    for(unsigned int i = 0;i < 10000000; i ++);
-                    P02_OUT.U &= ~(0x1 << P3_BIT_LSB_IDX);
-
                     CCU60_TCTR4.B.T12RR = 0x1;       // stop CCU60 T12 counter
                     CCU60_TCTR4.B.T12RES = 0x1;    // Reset CCU60 T12 counter
+
+                    GTM_TOM0_CH11_SR0.U = (6250000 / 220) - 1;
+                    GTM_TOM0_CH11_SR1.U = (3125000 / 220) - 1;
+                    for(unsigned int i = 0; i < 25000000; i++);
+                    GTM_TOM0_CH11_SR0.U = 0;
+                    GTM_TOM0_CH11_SR1.U = 0;
 
                     P10_OUT.U |=  0x1 << P1_BIT_LSB_IDX;
                     P02_OUT.U &= ~(0x1 << P7_BIT_LSB_IDX);
@@ -369,7 +375,7 @@ return (1);
 
 void airplane(void)
 {
-    // 비행기 // from 3 octave ��C ~ 4 octave ��C {��C, ��D, ��E, ��F, ��G, ��A, ��B, ��C}
+    // 비행기 //
     unsigned int duty[8] = {130, 146, 164, 174, 195, 220, 246, 262};
 
     //for(unsigned int i = 0; i < 25000000; i++);
@@ -532,6 +538,9 @@ void airplane(void)
     GTM_TOM0_CH11_SR0.U = (6250000 / duty[4]) - 1;
     GTM_TOM0_CH11_SR1.U = (3125000 / duty[4]) - 1;
 
+    for(unsigned int i = 0; i < 25000000; i++);
+    GTM_TOM0_CH11_SR0.U = 0;
+    GTM_TOM0_CH11_SR1.U = 0;
 }
 
 void initLED(void)
@@ -611,7 +620,7 @@ P10_IOCR0.U |= 0x10 << PC3_BIT_LSB_IDX;
 
 void initBuzzer(void)
 {
-P02_IOCR0.B.PC3 = 0x10;
+P02_IOCR0.B.PC3 = 0x11;
 }
 
 
